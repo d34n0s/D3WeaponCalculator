@@ -39,7 +39,6 @@ public class Character extends BaseActivity {
     TextView tvId;
     TextView tvName;
     TextView tvClass;
-    TextView tvEliteKills;
     ListView lvSkills;
     ListView lvItems;
     ImageView ivCharImage;
@@ -68,7 +67,6 @@ public class Character extends BaseActivity {
         tvId = (TextView) findViewById(R.id.tv_char_id);
         tvName = (TextView) findViewById(R.id.tv_char_name);
         tvClass = (TextView) findViewById(R.id.tv_char_class);
-        tvEliteKills = (TextView) findViewById(R.id.tv_char_eliteKills);
         lvSkills = (ListView) findViewById(R.id.lv_char_skills);
         lvItems = (ListView) findViewById(R.id.lv_char_items);
         ivCharImage = (ImageView) findViewById(R.id.iv_char_classGender);

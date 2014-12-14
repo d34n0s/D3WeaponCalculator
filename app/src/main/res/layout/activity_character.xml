@@ -24,13 +24,15 @@
             android:src="@drawable/barbarian_m"
             android:id="@+id/iv_char_classGender" />
 
-        <TextView
-            android:id="@+id/tv_char_eliteKills"
-            android:layout_width="wrap_content"
+        <Button
+            android:enabled="false"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/iv_char_classGender"
-            android:textSize="10sp"
-            android:text="Elite Kills: "/>
+            android:text="More"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:onClick="b_char_moreInfo"
+            style="@style/button"/>
 
         <TextView
             android:layout_width="fill_parent"
