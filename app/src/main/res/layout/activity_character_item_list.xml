@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="30sp"
+        android:weightSum="100">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="70">
+
+
+            <TextView
+                android:id="@+id/tv_char_item_slot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/buttonStart"
+                android:gravity="left"
+                android:text="ItemSlot"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_char_item_list"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="30">
+
+            <TextView
+                android:id="@+id/tv_char_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left"
+                android:text="ItemName"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_char_skills_row"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="30sp"
+        android:weightSum="100">
+
+
+
+         <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="50">
+
+
+             <TextView
+                 android:id="@+id/tv_char_skills_name"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="left"
+                 android:text="Skill"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="50">
+
+                <TextView
+                    android:id="@+id/tv_char_skills_rune"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left"
+                    android:text="Rune"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="6">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="20sp">
+
+        <Button
+            android:enabled="false"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Barbarian"
+            android:textSize="20sp"
+            android:id="@+id/b_bpcm_barbarian"
+            style="@style/button"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="20sp">
+
+        <Button
+            android:enabled="false"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Crusader"
+            android:textSize="20sp"
+            android:id="@+id/b_bpcm_crusader"
+            style="@style/button"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="20sp">
+
+        <Button
+            android:enabled="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Demon Hunter"
+            android:textSize="20sp"
+            android:id="@+id/b_bpcm_demonHunter"
+            android:onClick="b_bpcm_demonHunter"
+            style="@style/button"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="20sp">
+
+        <Button
+            android:enabled="false"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Monk"
+            android:textSize="20sp"
+            android:id="@+id/b_bpcm_monk"
+            style="@style/button"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="20sp">
+
+        <Button
+            android:enabled="false"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Witch Doctor"
+            android:textSize="20sp"
+            android:id="@+id/b_bpcm_witchDoctor"
+            style="@style/button"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="20sp">
+
+        <Button
+            android:enabled="false"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Wizard"
+            android:textSize="20sp"
+            android:id="@+id/b_bpcm_wizard"
+            style="@style/button"/>
+    </LinearLayout>
+
+</LinearLayout>

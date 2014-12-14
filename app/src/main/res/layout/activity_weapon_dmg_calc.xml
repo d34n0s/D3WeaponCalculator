@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="@color/accentDarkColor_200"
+        android:text="Weapon Damage Re-Roll Calculator"
+        android:id="@+id/textView" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+        <ViewFlipper
+            android:id="@+id/vf_wc_flipper"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+
+                <TextView
+                    android:id="@+id/tv_wc_instructions"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="20dp"
+                    android:textSize="20sp"
+                    android:text="Instructions go here"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:id="@+id/tv_wc_swipe_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="Step 1 of 2 -->"/>
+
+                <TableLayout
+                    android:id="@+id/tl_wc_def_wepDmg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:id="@+id/tableRow1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5sp">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Main Damage Range"
+                            android:id="@+id/textView2" />
+
+                        <EditText
+                            android:layout_width="100sp"
+                            android:layout_height="wrap_content"
+                            android:hint="min"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="4"
+                            android:id="@+id/et_wc_def_dmg_min" />
+
+                        <EditText
+                            android:layout_width="100sp"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="max"
+                            android:id="@+id/et_wc_def_dmg_max" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Speed (APS)"
+                            android:id="@+id/textView3" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:hint="1.0-4.0"
+                            android:id="@+id/et_wc_def_weaponAPS" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="% Damage / IAS"
+                            android:id="@+id/textView4" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="0-10"
+                            android:id="@+id/et_wc_def_DmgPercentage" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="0-7"
+                            android:id="@+id/et_wc_def_DmgIAS" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sub Damage Range"
+                            android:id="@+id/textView5" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="min"
+                            android:id="@+id/et_wc_def_subdmg_min" />
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="max"
+                            android:id="@+id/et_wc_def_subdmg_max" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="200sp"
+                    android:src="@drawable/weapon_example"
+                    android:id="@+id/iv_wc_examples" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_wc_examples"
+                    android:weightSum="100"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="25">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Example 1"
+                            android:textSize="10sp"
+                            style="@style/button"
+                            android:id="@+id/b_wc_example1"
+                            android:onClick="b_wc_example1"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="25">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Example 2"
+                            android:textSize="10sp"
+                            style="@style/button"
+                            android:id="@+id/b_wc_example2"
+                            android:onClick="b_wc_example2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="25">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Example 3"
+                            android:textSize="10sp"
+                            style="@style/button"
+                            android:id="@+id/b_wc_example3"
+                            android:onClick="b_wc_example3"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="25">
+
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Clear"
+                            style="@style/button"
+                            android:id="@+id/b_wc_clear"
+                            android:onClick="b_wc_clear"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:id="@+id/tv_wc_swipe_3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="Step 2 of 2"/>
+
+                <TableLayout
+                    android:id="@+id/tl_wc_new_wepDmg"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp">
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15sp">
+
+
+                        <TextView
+                            android:layout_width="150sp"
+                            android:layout_height="45sp"
+                            android:layout_gravity="center"
+                            android:text="Max rolls for Sub Damage Range" />
+
+                        <EditText
+                            android:layout_width="100sp"
+                            android:layout_height="wrap_content"
+                            android:hint="min"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="4"
+                            android:id="@+id/et_wc_new_dmg_min" />
+
+                        <EditText
+                            android:layout_width="100sp"
+                            android:layout_height="wrap_content"
+                            android:hint="max"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:maxLength="4"
+                            android:id="@+id/et_wc_new_dmg_max" />
+                    </TableRow>
+
+
+                </TableLayout>
+
+                <Button
+                    android:id="@+id/b_wc_calculate"
+                    android:onClick="b_wc_calculate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Calculate"
+                    style="@style/button"
+                    android:layout_marginTop="10sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*Approx. values due to rounding"
+                    android:textColor="@color/accentDarkColor_200"
+                    android:gravity="right"
+                    android:layout_gravity="left"
+                    android:textSize="10sp"
+                    android:id="@+id/tv_wc_approxMessage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current DPS: XXXX.X"
+                    android:textColor="@color/accentDarkColor_200"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textSize="20sp"
+                    android:id="@+id/tv_wc_DefDmg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New DPS (if Weapon Damage Rolled: XXXX.X"
+                    android:textColor="@color/accentDarkColor_200"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5sp"
+                    android:id="@+id/tv_wc_NewDmg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New DPS (if % Damage rolled): XXXX.X"
+                    android:textColor="@color/accentDarkColor_200"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5sp"
+                    android:id="@+id/tv_wc_NewDmgPercent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New DPS (if IAS rolled): XXXX.X"
+                    android:textColor="@color/accentDarkColor_200"
+                    android:gravity="right"
+                    android:layout_gravity="right"
+                    android:textSize="15sp"
+                    android:layout_marginTop="5sp"
+                    android:id="@+id/tv_wc_NewDmgIAS" />
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250sp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/weapon_example_rolls_enchantress"
+                    android:id="@+id/imageView1" />
+
+            </LinearLayout>
+        </ViewFlipper>
+    </LinearLayout>
+</LinearLayout>

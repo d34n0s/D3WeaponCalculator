@@ -1,0 +1,130 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CharacterSelect">
+
+    <LinearLayout
+        android:id="@+id/ll_char_select_header"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/accentDarkColor_200">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Armory"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/ll_Title"
+        android:layout_below="@+id/ll_char_select_header"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="EU"
+            android:textOff="US"
+            android:id="@+id/sw_charSelect_Region"/>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_BTag"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_below="@id/ll_Title">
+
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="BattleNetName"
+            android:id="@+id/et_charSelect_name"/>
+
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="1234"
+            android:inputType="number"
+            android:id="@+id/et_charSelect_number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_getButton"
+        android:layout_marginTop="10sp"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_BTag">
+
+        <Button
+            android:id="@+id/b_characterSelect_Get"
+            android:onClick="b_characterSelect_Get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            style="@style/button"
+            android:text="Retrieve Heroes"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_Results"
+        android:layout_marginTop="10sp"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_getButton">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="1sp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="5sp"
+            android:id="@+id/tv_charSelect_URL" />
+
+        <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="0sp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="5sp"
+                        android:id="@+id/tv_charSelect_JSON" />
+            </ScrollView>
+
+        <ListView
+            android:id="@+id/lv_charSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            </ListView>
+
+        </LinearLayout>
+
+
+
+</RelativeLayout>

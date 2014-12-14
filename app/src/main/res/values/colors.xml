@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Claim App Colours-->
+    <color name="accentDarkColor_200">#fdffb4</color>
+    <color name="accentLightColor_100">#fdffb4</color>
+    <color name="primaryColor_100">#506777</color>
+    <color name="primaryColor_500">#506777</color>
+    <color name="primaryDarkColor_700">#312829</color>
+    <color name="buttonStart">#F5F5F5</color>
+    <color name="buttonEnd">#537080</color>
+    <color name="black">#000000</color>
+
+</resources>
