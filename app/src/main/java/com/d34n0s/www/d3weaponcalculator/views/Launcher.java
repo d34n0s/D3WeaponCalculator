@@ -2,7 +2,6 @@ package com.d34n0s.www.d3weaponcalculator.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 
 import com.d34n0s.www.d3weaponcalculator.R;
@@ -16,13 +15,6 @@ public class Launcher extends BaseActivity {
         setContentView(R.layout.activity_launcher);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
     public void b_ls_weaponCalc(View view) {
         Intent iwc = new Intent(view.getContext(), WeaponDmgCalc.class);
