@@ -35,6 +35,7 @@
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 android:text="Name"
+                android:textColor="@color/accentDarkColor_200"
                 android:id="@+id/tv_charList_name" />
 
             <TextView

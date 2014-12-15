@@ -1,6 +1,7 @@
 package com.d34n0s.www.d3weaponcalculator.views;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
@@ -144,7 +146,7 @@ public class CharacterSelect extends BaseActivity {
 
     }
 
-    private void doLogin(){
+    private void getHeroes(){
 
         progressDialog = new ProgressDialog(this);
         progressDialog = ProgressDialog.show(this, "", "Loading...", true, true);
@@ -185,6 +187,7 @@ public class CharacterSelect extends BaseActivity {
 
                             }else {
                                 JSONArray heroes = json.getJSONArray("heroes");
+
 
                                 int i = 0;
                                 while (i < heroes.length()) {
@@ -327,9 +330,17 @@ public class CharacterSelect extends BaseActivity {
 
     public void b_characterSelect_Get(View view) {
 
-        doLogin();
+        //close the keyboard
+        InputMethodManager inputManager = (InputMethodManager)
+                getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                InputMethodManager.HIDE_NOT_ALWAYS);
+
+        getHeroes();
 
 
         saveSharedPrefs();
+
     }
 }

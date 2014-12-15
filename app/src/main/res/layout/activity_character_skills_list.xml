@@ -23,6 +23,7 @@
                  android:id="@+id/tv_char_skills_name"
                  android:layout_width="match_parent"
                  android:layout_height="match_parent"
+                 android:textColor="@color/accentDarkColor_200"
                  android:gravity="left"
                  android:text="Skill"/>
 
@@ -39,6 +40,7 @@
                     android:id="@+id/tv_char_skills_rune"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/primaryDarkColor_700"
                     android:gravity="left"
                     android:text="Rune"/>
 

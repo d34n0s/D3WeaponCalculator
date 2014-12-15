@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.d34n0s.www.d3weaponcalculator.R;
 import com.d34n0s.www.d3weaponcalculator.helpers.CharacterImageSelector;
 import com.d34n0s.www.d3weaponcalculator.helpers.ItemPopUp;
+import com.d34n0s.www.d3weaponcalculator.models.D3Hero;
 import com.d34n0s.www.d3weaponcalculator.models.D3Items;
 import com.d34n0s.www.d3weaponcalculator.models.D3Skills;
 import com.google.gson.Gson;
@@ -46,6 +47,8 @@ public class Character extends BaseActivity {
 
     //Switch region variable
     String urlComplete;
+
+    String jsonResult;
 
     //this is the array to hold our skill class data
     ArrayList<D3Skills> arrayOfSkillData = new ArrayList<D3Skills>();
@@ -108,7 +111,7 @@ public class Character extends BaseActivity {
                         progressDialog.dismiss();
 
                         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                        String jsonResult = gson.toJson(result);
+                        jsonResult = gson.toJson(result);
 
                         Log.d(this.toString(), result.toString());
 
@@ -141,7 +144,7 @@ public class Character extends BaseActivity {
 
                                     d3s = gson1.fromJson(skill.toString(), D3Skills.class);
 
-                                    if (skill.has("rune")) {
+                                    if (json_data.has("rune")) {
                                         JSONObject rune = json_data.getJSONObject("rune");
                                         d3s.skillRune = rune.getString("name");
                                         d3s.runeDesc = rune.getString("description");
@@ -483,7 +486,9 @@ public class Character extends BaseActivity {
 
     }
 
-                    class FancySkillAdapter extends ArrayAdapter<D3Skills> {
+
+
+    class FancySkillAdapter extends ArrayAdapter<D3Skills> {
 
                         FancySkillAdapter(){
                             super(Character.this, android.R.layout.simple_list_item_1, arrayOfSkillData);
@@ -605,5 +610,31 @@ public class Character extends BaseActivity {
                             }
                         }
                     }
-                }
+
+    public void b_char_moreInfo(View view) {
+
+        GsonBuilder gsonb = new GsonBuilder();
+        Gson gson1 = gsonb.create();
+
+        D3Hero d3Hero;
+
+        JSONObject json = null;
+        try {
+            json = new JSONObject(jsonResult);
+            JSONObject jsonstats = json.getJSONObject("stats");
+
+            d3Hero = gson1.fromJson(jsonstats.toString(), D3Hero.class);
+
+            Log.d(this.toString(), d3Hero.toString());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+    }
+}
 

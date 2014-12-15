@@ -43,7 +43,7 @@
     <item android:state_enabled="false" >
         <shape>
             <gradient
-                android:endColor="@color/buttonEnd"
+                android:endColor="@color/primaryDarkColor_700"
                 android:startColor="@color/buttonEnd"
                 android:angle="270" />
             <stroke
